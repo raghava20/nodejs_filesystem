@@ -2,7 +2,6 @@ var fs = require("fs");
 var moment = require('moment'); // require
 var express = require("express")
 var cors = require("cors")
-// var index = require("./index.html")
 
 const app = express()
 
@@ -17,15 +16,11 @@ app.get("/", (req, res) => {
     ''
     res.send("Hi! Please use: <br><br> <i>/timestamp</i> endpoint for getting the current timestamp <br><br> <i>/files</i> endpoint for getting text files");
 })
-
+//for getting the current timestamp 
 app.get("/timestamp", (req, res) => {
 
     var timestamp = new Date().getTime()
-    console.log(timestamp)
-
     var date = moment(timestamp).format("DD-MM-YYYY_h-mm-ss_A");
-    console.log(date)
-
 
     const writeFile = async (timestamp, date) => {
 
@@ -43,7 +38,7 @@ app.get("/timestamp", (req, res) => {
     writeFile(timestamp, date)
 })
 
-
+//for getting the files of the timestamp in .text
 app.get("/files", (req, res) => {
     let getFiles = async () => {
         await fs.readdir("./downloads", (err, files) => {
