@@ -4,6 +4,7 @@ var express = require("express")
 var cors = require("cors")
 
 const app = express()
+const host = '0.0.0.0'
 
 app.use(cors()); // every request to be allowed in
 app.use(express.json());
@@ -49,4 +50,4 @@ app.get("/files", (req, res) => {
     getFiles();
 })
 
-app.listen(5000 || process.env.PORT)
+app.listen(process.env.PORT || 3000, host)
