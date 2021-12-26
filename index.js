@@ -13,7 +13,7 @@ let result = []
 let final = []
 
 app.get("/", (req, res) => {
-    res.send("Hi! Please use: <br><br> <i>/timestamp</i> endpoint for getting the current timestamp <br><br> <i>/files</i> endpoint for getting text files");
+    res.send("Hi! Please use: <br><br> <i>/timestamp</i> endpoint for getting the current timestamp <br><br> <i>/files</i> endpoint for getting text files <br>Note: Refresh page for new date and time.");
 })
 //for getting the current timestamp 
 app.get("/timestamp", (req, res) => {
