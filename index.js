@@ -26,7 +26,7 @@ app.get("/timestamp", (req, res) => {
         await fs.writeFile(`./downloads/${date}.txt`, `The current timestamp is: ${timestamp.toString()}`, (err) => {
             console.log("created")
             result.push({
-                "timestamp": `The current timestamp is: ${timestamp.toString()}`,
+                "content": `The current timestamp is ${timestamp.toString()}`,
                 "filename": `${date}.txt`,
             })
             res.send(result)
