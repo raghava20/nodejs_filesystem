@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
 //for getting the current timestamp 
 app.get("/timestamp", (req, res) => {
 
-    var timestamp = new Date().getTime()
+    var timestamp = new Date().getTime() + (5.5 * 60 * 60 * 1000)
     var date = moment(timestamp).format("DD-MM-YYYY_h-mm-ss_A");
 
     const writeFile = async (timestamp, date) => {
