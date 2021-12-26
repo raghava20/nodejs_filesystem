@@ -2,9 +2,10 @@ var fs = require("fs");
 var moment = require('moment'); // require
 var express = require("express")
 var cors = require("cors")
+var env = require("dotenv")
 
 const app = express()
-const PORT = 8000;
+const PORT = 8000 || process.env.PORT;
 
 app.use(cors()); // every request to be allowed in
 app.use(express.json());
