@@ -12,8 +12,6 @@ let result = []
 let final = []
 
 app.get("/", (req, res) => {
-
-    ''
     res.send("Hi! Please use: <br><br> <i>/timestamp</i> endpoint for getting the current timestamp <br><br> <i>/files</i> endpoint for getting text files");
 })
 //for getting the current timestamp 
